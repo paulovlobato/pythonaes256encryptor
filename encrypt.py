@@ -52,6 +52,7 @@ decoded = DecodeAES(cipher, encoded)
 print
 print 'Decrypted string:', decoded
 
+# Outputs the encoded string to a file without extension
 txtOut = open(filename + "En", "w")
 txtOut.write(encoded)
 txtOut.close()
