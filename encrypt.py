@@ -52,6 +52,10 @@ decoded = DecodeAES(cipher, encoded)
 print
 print 'Decrypted string:', decoded
 
+txtOut = open(filename + "En", "w")
+txtOut.write(encoded)
+txtOut.close()
+
 # print the key
 # print
 # print 'Key:', binascii.hexlify(secret)
