@@ -26,7 +26,10 @@ print(newpath)
 if not os.path.exists(newpath):
 	os.makedirs(newpath)
 
-for filename in os.listdir(absDirectory):
+files = (file for file in os.listdir(absDirectory) 
+         if os.path.isfile(os.path.join(absDirectory, file)))
+
+for filename in files:
 	print(filename)
 	os.chdir(absDirectory)
 	txt = open(filename)
