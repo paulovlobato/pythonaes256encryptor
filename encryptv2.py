@@ -21,6 +21,11 @@ secret = Random.new().read(AES.block_size)
 directory=sys.argv[1]
 absDirectory = os.path.abspath(directory)
 
+newpath = absDirectory + "/Encrypted"
+print(newpath)
+if not os.path.exists(newpath):
+	os.makedirs(newpath)
+
 for filename in os.listdir(absDirectory):
 	print(filename)
 	os.chdir(absDirectory)
@@ -56,9 +61,11 @@ for filename in os.listdir(absDirectory):
 	#print 'Decrypted string:', decoded
 	
 	# Outputs the encoded string to a file without extension
+	os.chdir(newpath)
 	txtOut = open(filename + "En", "w")
 	txtOut.write(encoded)
 	txtOut.close()
+	os.chdir(absDirectory)
 	
 	# print the key
 	# print
