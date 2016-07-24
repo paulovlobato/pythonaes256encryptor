@@ -45,12 +45,12 @@ cipher = AES.new(secret)
 
 # encode a string
 encoded = EncodeAES(cipher, textContent)
-print 'Encrypted string:', encoded
+#print 'Encrypted string:', encoded
 
 # decode the encoded string
 decoded = DecodeAES(cipher, encoded)
-print
-print 'Decrypted string:', decoded
+#print
+#print 'Decrypted string:', decoded
 
 # Outputs the encoded string to a file without extension
 txtOut = open(filename + "En", "w")
