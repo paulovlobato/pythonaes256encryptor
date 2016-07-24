@@ -21,7 +21,7 @@ secret = Random.new().read(AES.block_size)
 directory=sys.argv[1]
 absDirectory = os.path.abspath(directory)
 
-newpath = absDirectory + "/Encrypted"
+newpath = absDirectory + "/encryptedData"
 print(newpath)
 if not os.path.exists(newpath):
 	os.makedirs(newpath)
